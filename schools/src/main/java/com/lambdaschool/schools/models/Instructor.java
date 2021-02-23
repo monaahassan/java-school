@@ -12,7 +12,7 @@ import java.util.List;
 @Entity
 @Table(name = "instructors")
 public class Instructor
-    extends Auditable
+        extends Auditable
 {
     /**
      * The primary key (long) of the instructor table
@@ -32,10 +32,10 @@ public class Instructor
      * Forms a one to many relationship with courses. One instructor to many courses.
      */
     @OneToMany(mappedBy = "instructor",
-        cascade = CascadeType.ALL,
-        orphanRemoval = true)
+            cascade = CascadeType.ALL,
+            orphanRemoval = true)
     @JsonIgnoreProperties(value = "instructor",
-        allowSetters = true)
+            allowSetters = true)
     private List<Course> courses = new ArrayList<>();
 
     /**
@@ -51,7 +51,7 @@ public class Instructor
      * @param name The name (String) for the new instructor
      */
     public Instructor(
-        String name)
+            String name)
     {
         this.name = name;
     }
@@ -116,3 +116,4 @@ public class Instructor
         this.courses = courses;
     }
 }
+
