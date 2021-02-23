@@ -13,7 +13,7 @@ import java.util.Set;
 @Entity
 @Table(name = "courses")
 public class Course
-    extends Auditable
+        extends Auditable
 {
     /**
      * Primary key (long) for this course
@@ -26,7 +26,7 @@ public class Course
      * Name (String) of this Course. Cannot be null and must be unique
      */
     @Column(nullable = true,
-        unique = true)
+            unique = true)
     private String coursename;
 
     /**
@@ -37,9 +37,9 @@ public class Course
      */
     @ManyToOne
     @JoinColumn(name = "instructorid",
-        nullable = false)
+            nullable = false)
     @JsonIgnoreProperties(value = "courses",
-        allowSetters = true)
+            allowSetters = true)
     private Instructor instructor;
 
     /**
@@ -47,10 +47,10 @@ public class Course
      * connects course to a course student combination
      */
     @OneToMany(mappedBy = "course",
-        cascade = CascadeType.ALL,
-        orphanRemoval = true)
+            cascade = CascadeType.ALL,
+            orphanRemoval = true)
     @JsonIgnoreProperties(value = "course",
-        allowSetters = true)
+            allowSetters = true)
     private Set<StudCourses> students = new HashSet<>();
 
     /**

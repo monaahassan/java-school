@@ -57,7 +57,7 @@ public class StudCoursesId implements Serializable
         }
         StudCoursesId that = (StudCoursesId) o;
         return student == that.student &&
-            course == that.course;
+                course == that.course;
     }
 
     @Override

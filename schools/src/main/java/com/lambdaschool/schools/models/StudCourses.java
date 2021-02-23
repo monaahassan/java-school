@@ -13,8 +13,8 @@ import java.io.Serializable;
 @Table(name = "studcourses")
 @IdClass(StudCoursesId.class)
 public class StudCourses
-    extends Auditable
-    implements Serializable
+        extends Auditable
+        implements Serializable
 {
     /**
      * Foreign key into the course table
@@ -45,8 +45,8 @@ public class StudCourses
      * @param student The student object of the course student combination
      */
     public StudCourses(
-        Course course,
-        Student student)
+            Course course,
+            Student student)
     {
         this.course = course;
         this.student = student;
@@ -105,7 +105,7 @@ public class StudCourses
         }
         StudCourses that = (StudCourses) o;
         return ((this.student == null) ? 0 : this.student.getStudentid()) == ((that.student == null) ? 0 : that.student.getStudentid()) &&
-            ((this.course == null) ? 0 : this.course.getCourseid()) == ((that.course == null) ? 0 : that.course.getCourseid());
+                ((this.course == null) ? 0 : this.course.getCourseid()) == ((that.course == null) ? 0 : that.course.getCourseid());
     }
 
     @Override
